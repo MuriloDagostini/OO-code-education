@@ -1,8 +1,12 @@
 <?php
+header('Content-type: text/html; charset=utf-8');
+
 //inicio html
 include_once ("head.php");
 
 include_once ("/classes/Pessoa.php");
+include_once ("/classes/PessoaFisica.php");
+include_once ("/classes/PessoaJuridica.php");
 include_once ("/classes/Dados.php");
 
 $dados = new Dados();
@@ -15,7 +19,7 @@ $id_pessoa = filter_input(INPUT_GET,'id');
         <div class="col-md-12">
             <div class="panel panel-default">
                 <!-- Default panel contents -->
-                <div class="panel-heading">Dados Pessoais</div>
+                <div class="panel-heading">Dados do Cliente</div>
                 <!-- Table -->
                 <table class="table">
                     <?=$dados->montaTabelaporId($arrayPessoas,$id_pessoa)?>

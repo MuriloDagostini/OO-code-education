@@ -2,22 +2,78 @@
 
 class Pessoa {
 
-    public $id;
-    public $nome;
-    public $idade;
-    public $cpf;
-    public $cidade;
-    public $email;
-    public $telefone;
+    protected $id;
+    protected $nome;
+    protected $cidade;
+    protected $email;
+    protected $telefone;
+    protected $nota;
+    protected $endereco;
+    protected $tipo;
 
-    function __construct($id,$nome,$idade,$cpf,$cidade,$email,$telefone) {
-        $this->id = $id;
-        $this->nome = $nome;
-        $this->idade = $idade;
-        $this->cpf = $cpf;
-        $this->cidade = $cidade;
-        $this->email = $email;
-        $this->telefone = $telefone;
+    /**
+     * @return mixed
+     */
+    public function getCidade()
+    {
+        return $this->cidade;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEndereco()
+    {
+        return $this->endereco;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNome()
+    {
+        return $this->nome;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNota()
+    {
+        return $this->nota;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTelefone()
+    {
+        return $this->telefone;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTipo()
+    {
+        return $this->tipo;
+    }
+
 
 } 
