@@ -1,6 +1,6 @@
 <?php
 
-class PessoaFisica extends Pessoa{
+class PessoaFisica extends Pessoa implements ClienteInterface{
 
     protected $cpf;
     protected $idade;

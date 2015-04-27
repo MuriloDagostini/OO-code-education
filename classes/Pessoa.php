@@ -38,6 +38,14 @@ class Pessoa {
     /**
      * @return mixed
      */
+    public function setEndereco($var)
+    {
+        return $this->endereco = $var;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getId()
     {
         return $this->id;
@@ -57,6 +65,15 @@ class Pessoa {
     public function getNota()
     {
         return $this->nota;
+    }
+
+
+    /**
+     * @return mixed
+     */
+    public function setNota($var)
+    {
+        return $this->nota = $var;
     }
 
     /**
