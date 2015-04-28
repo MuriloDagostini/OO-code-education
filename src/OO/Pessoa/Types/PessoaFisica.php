@@ -1,9 +1,9 @@
 <?php
 
-namespace src\OO\Pessoa\Types;
+namespace OO\Pessoa\Types;
 
-use src\OO\Pessoa\Pessoa;
-use src\OO\Pessoa\Util\Cpf;
+use OO\Pessoa\Pessoa;
+use OO\Pessoa\Interfaces\Cpf;
 
 class PessoaFisica extends Pessoa implements Cpf{
 

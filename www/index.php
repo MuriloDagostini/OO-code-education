@@ -2,16 +2,20 @@
 
 header('Content-type: text/html; charset=utf-8');
 
-define('CLASS_DIR','src/');
-set_include_path(get_include_path().PATH_SEPARATOR.CLASS_DIR);
-spl_autoload_register();
+define("ROOT",str_replace(DIRECTORY_SEPARATOR."www",'',__DIR__));
+define("CLASS_DIR", ROOT . DIRECTORY_SEPARATOR . "src" . DIRECTORY_SEPARATOR);
+
+spl_autoload_register(function($class) {
+    $className = CLASS_DIR . str_replace("\\", DIRECTORY_SEPARATOR, $class) . ".php";
+    include($className);
+});
 
 //inicio html
 include_once("head.php");
 
 include_once("menu.php");
 
-$dados = new OO\Pessoa\Pessoa();
+$dados = new OO\Pessoa\Util\Dados();
 
 $arrayPessoas = $dados->montaArray();
 $sort = filter_input(INPUT_GET,'sort');

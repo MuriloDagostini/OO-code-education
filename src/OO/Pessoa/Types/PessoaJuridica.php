@@ -1,6 +1,9 @@
 <?php
 
-include_once "Cnpj.php";
+namespace OO\Pessoa\Types;
+
+use OO\Pessoa\Pessoa;
+use OO\Pessoa\Interfaces\Cnpj;
 
 class PessoaJuridica extends Pessoa implements Cnpj{
 

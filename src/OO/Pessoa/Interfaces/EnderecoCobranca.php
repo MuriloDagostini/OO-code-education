@@ -1,6 +1,6 @@
 <?php
 
-namespace src\OO\Pessoa\Util;
+namespace OO\Pessoa\Interfaces;
 
 interface EnderecoCobranca {
 

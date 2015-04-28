@@ -1,8 +1,11 @@
 <?php
 
-namespace src\OO\Pessoa;
+namespace OO\Pessoa;
 
-class Pessoa implements NotaImportancia,EnderecoCobranca {
+use OO\Pessoa\Interfaces\NotaImportancia;
+use OO\Pessoa\Interfaces\EnderecoCobranca;
+
+abstract class Pessoa implements NotaImportancia,EnderecoCobranca {
 
     protected $id;
     protected $nome;

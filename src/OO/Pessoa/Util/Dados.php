@@ -1,12 +1,15 @@
 <?php
 
-namespace src\OO\Pessoa\Util;
+namespace OO\Pessoa\Util;
 
-trait Dados {
+use OO\Pessoa\Types\PessoaFisica;
+use OO\Pessoa\Types\PessoaJuridica;
+
+class Dados {
 
     public function montaArray()
     {
-        $dados = include "/dados/clientes.php";
+        $dados = include ROOT."/dados/clientes.php";
         $arrayPessoas = array();
 
         foreach ($dados as $pessoa) {
