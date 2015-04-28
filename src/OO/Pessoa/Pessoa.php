@@ -1,7 +1,6 @@
 <?php
 
-include_once "EnderecoCobranca.php";
-include_once "NotaImportancia.php";
+namespace src\OO\Pessoa;
 
 class Pessoa implements NotaImportancia,EnderecoCobranca {
 

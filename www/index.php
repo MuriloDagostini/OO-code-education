@@ -2,17 +2,16 @@
 
 header('Content-type: text/html; charset=utf-8');
 
+define('CLASS_DIR','src/');
+set_include_path(get_include_path().PATH_SEPARATOR.CLASS_DIR);
+spl_autoload_register();
+
 //inicio html
-include_once ("head.php");
+include_once("head.php");
 
-include_once ("menu.php");
+include_once("menu.php");
 
-include_once ("/classes/Pessoa.php");
-include_once ("/classes/PessoaFisica.php");
-include_once ("/classes/PessoaJuridica.php");
-include_once ("/classes/Dados.php");
-
-$dados = new Dados();
+$dados = new OO\Pessoa\Pessoa();
 
 $arrayPessoas = $dados->montaArray();
 $sort = filter_input(INPUT_GET,'sort');
@@ -43,7 +42,7 @@ $sort = filter_input(INPUT_GET,'sort');
 
 <?
 
-include_once ("footer.php");
+include_once("footer.php");
 
 ?>
 

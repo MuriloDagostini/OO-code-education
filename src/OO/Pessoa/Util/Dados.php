@@ -1,6 +1,8 @@
 <?php
 
-class Dados {
+namespace src\OO\Pessoa\Util;
+
+trait Dados {
 
     public function montaArray()
     {
@@ -35,7 +37,7 @@ class Dados {
 
                 <tr>
                     <td>{$pessoa->getId()}</td>
-                    <td><a href='/view_pessoa.php?id={$pessoa->getId()}' class='fancy' data-fancybox-type='iframe'>{$pessoa->getNome()}</a></td>
+                    <td><a href='/www/view_pessoa.php?id={$pessoa->getId()}' class='fancy' data-fancybox-type='iframe'>{$pessoa->getNome()}</a></td>
                     <td>{$pessoa->getEmail()}</td>
                     <td>{$pessoa->getTelefone()}</td>
                     <td>{$tipo}</td>

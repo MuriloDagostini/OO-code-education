@@ -1,6 +1,9 @@
 <?php
 
-include_once "Cpf.php";
+namespace src\OO\Pessoa\Types;
+
+use src\OO\Pessoa\Pessoa;
+use src\OO\Pessoa\Util\Cpf;
 
 class PessoaFisica extends Pessoa implements Cpf{
 

@@ -2,7 +2,7 @@
 header('Content-type: text/html; charset=utf-8');
 
 //inicio html
-include_once ("head.php");
+include_once("head.php");
 
 include_once ("/classes/Pessoa.php");
 include_once ("/classes/PessoaFisica.php");
@@ -31,7 +31,7 @@ $id_pessoa = filter_input(INPUT_GET,'id');
 
 <?
 
-include_once ("scripts.php");
+include_once("scripts.php");
 
 ?>
 

@@ -4,6 +4,6 @@
 </footer>
 </div> <!-- /container -->
 
-<? include ("scripts.php");?>
+<? include("scripts.php");?>
 </body>
 </html>
