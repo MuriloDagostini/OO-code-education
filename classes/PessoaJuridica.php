@@ -1,19 +1,23 @@
 <?php
 
-class PessoaJuridica extends Pessoa{
+include_once "Cnpj.php";
+
+class PessoaJuridica extends Pessoa implements Cnpj{
 
     protected $cnpj;
 
-    function __construct($id,$nome,$cnpj,$cidade,$email,$telefone,$nota,$tipo,$endereco) {
-        $this->id = $id;
-        $this->nome = $nome;
-        $this->cnpj = $cnpj;
-        $this->cidade = $cidade;
-        $this->email = $email;
-        $this->telefone = $telefone;
-        $this->nota = $nota;
-        $this->tipo = $tipo;
-        $this->endereco = $endereco;
+    function __construct($pessoa) {
+
+        $this->id = $pessoa['id'];
+        $this->nome = $pessoa['nome'];
+        $this->cnpj = $pessoa['cnpj'];
+        $this->cidade = $pessoa['cidade'];
+        $this->email = $pessoa['email'];
+        $this->telefone = $pessoa['telefone'];
+        $this->nota = $pessoa["nota"];
+        $this->tipo = $pessoa['tipo'];
+        $this->endereco = $pessoa['endereco'];
+
     }
 
     /**
@@ -24,6 +28,10 @@ class PessoaJuridica extends Pessoa{
         return $this->cnpj;
     }
 
+    public function alteraCnpj($cnpj)
+    {
+        return $this->cnpj = $cnpj;
+    }
 
 
 } 

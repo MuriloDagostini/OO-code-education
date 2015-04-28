@@ -1,21 +1,23 @@
 <?php
 
-class PessoaFisica extends Pessoa implements ClienteInterface{
+include_once "Cpf.php";
+
+class PessoaFisica extends Pessoa implements Cpf{
 
     protected $cpf;
     protected $idade;
 
-    function __construct($id,$nome,$idade,$cpf,$cidade,$email,$telefone,$nota,$tipo,$endereco) {
-        $this->id = $id;
-        $this->nome = $nome;
-        $this->idade = $idade;
-        $this->cpf = $cpf;
-        $this->cidade = $cidade;
-        $this->email = $email;
-        $this->telefone = $telefone;
-        $this->nota = $nota;
-        $this->tipo = $tipo;
-        $this->endereco = $endereco;
+    function __construct($pessoa) {
+        $this->id = $pessoa['id'];
+        $this->nome = $pessoa['nome'];
+        $this->idade = $pessoa['idade'];
+        $this->cpf = $pessoa['cpf'];
+        $this->cidade = $pessoa['cidade'];
+        $this->email = $pessoa['email'];
+        $this->telefone = $pessoa['telefone'];
+        $this->nota = $pessoa['nota'];
+        $this->tipo = $pessoa['tipo'];
+        $this->endereco = $pessoa['endereco'];
     }
 
     /**
@@ -34,6 +36,10 @@ class PessoaFisica extends Pessoa implements ClienteInterface{
         return $this->idade;
     }
 
+    public function alteraCpf($cpf)
+    {
+        $this->cpf = $cpf;
+    }
 
 
 } 

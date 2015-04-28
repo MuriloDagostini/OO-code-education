@@ -9,12 +9,9 @@ class Dados {
 
         foreach ($dados as $pessoa) {
             if($pessoa['tipo']=="CPF"){
-                $arrayPessoas[] = new PessoaFisica($pessoa['id'], $pessoa['nome'], $pessoa['idade'], $pessoa['cpf'],
-                    $pessoa['cidade'], $pessoa['email'], $pessoa['telefone'], $pessoa['nota'], $pessoa['tipo'],
-                        $pessoa['endereco']);
+                $arrayPessoas[] = new PessoaFisica($pessoa);
             }else{
-                $arrayPessoas[] = new PessoaJuridica($pessoa['id'], $pessoa['nome'], $pessoa['cnpj'],$pessoa['cidade'],
-                    $pessoa['email'], $pessoa['telefone'], $pessoa['nota'], $pessoa['tipo'], $pessoa['endereco']);
+                $arrayPessoas[] = new PessoaJuridica($pessoa);
             }
         }
 

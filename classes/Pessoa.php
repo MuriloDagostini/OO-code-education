@@ -1,6 +1,9 @@
 <?php
 
-class Pessoa {
+include_once "EnderecoCobranca.php";
+include_once "NotaImportancia.php";
+
+class Pessoa implements NotaImportancia,EnderecoCobranca {
 
     protected $id;
     protected $nome;
