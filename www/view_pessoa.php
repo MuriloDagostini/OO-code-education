@@ -4,12 +4,15 @@ header('Content-type: text/html; charset=utf-8');
 //inicio html
 include_once("head.php");
 
-include_once ("/classes/Pessoa.php");
-include_once ("/classes/PessoaFisica.php");
-include_once ("/classes/PessoaJuridica.php");
-include_once ("/classes/Dados.php");
+define("ROOT",str_replace(DIRECTORY_SEPARATOR."www",'',__DIR__));
+define("CLASS_DIR", ROOT . DIRECTORY_SEPARATOR . "src" . DIRECTORY_SEPARATOR);
 
-$dados = new Dados();
+spl_autoload_register(function($class) {
+    $className = CLASS_DIR . str_replace("\\", DIRECTORY_SEPARATOR, $class) . ".php";
+    include($className);
+});
+
+$dados = new \OO\Pessoa\Util\Dados();
 
 $arrayPessoas = $dados->montaArray();
 $id_pessoa = filter_input(INPUT_GET,'id');

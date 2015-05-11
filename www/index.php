@@ -16,7 +16,7 @@ include_once("head.php");
 include_once("menu.php");
 
 $dados = new OO\Pessoa\Util\Dados();
-
+$dados->flush();
 $arrayPessoas = $dados->montaArray();
 $sort = filter_input(INPUT_GET,'sort');
 ?>

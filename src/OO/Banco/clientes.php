@@ -13,5 +13,4 @@
         array("id" => 10,"nome" => "Empresa E", "cnpj" => "09.999.999/0000", "cidade" => "Blumenau", "email" => "paulo@empresa.com.br", "telefone" => "(43) 2976-8030", "nota" => "2", "tipo" => "CNPJ", "endereco" => ""),
         array("id" => 11,"nome" => "Empresa F", "cnpj" => "09.999.999/0000", "cidade" => "Blumenau", "email" => "leila@empresa.com.br", "telefone" => "(43) 2965-2350", "nota" => "5", "tipo" => "CNPJ", "endereco" => "Av. Castelo Branco , 999"),
         array("id" => 12,"nome" => "Empresa G", "cnpj" => "09.999.999/0000", "cidade" => "Blumenau", "email" => "livia@empresa.com.br", "telefone" => "(43) 2943-2560", "nota" => "3", "tipo" => "CNPJ", "endereco" => ""),
-
     );

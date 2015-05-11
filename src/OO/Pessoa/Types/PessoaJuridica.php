@@ -11,7 +11,7 @@ class PessoaJuridica extends Pessoa implements Cnpj{
 
     function __construct($pessoa) {
 
-        $this->id = $pessoa['id'];
+        $this->id = $pessoa['id_cliente'];
         $this->nome = $pessoa['nome'];
         $this->cnpj = $pessoa['cnpj'];
         $this->cidade = $pessoa['cidade'];

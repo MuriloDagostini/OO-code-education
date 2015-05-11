@@ -11,7 +11,7 @@ class PessoaFisica extends Pessoa implements Cpf{
     protected $idade;
 
     function __construct($pessoa) {
-        $this->id = $pessoa['id'];
+        $this->id = $pessoa['id_cliente'];
         $this->nome = $pessoa['nome'];
         $this->idade = $pessoa['idade'];
         $this->cpf = $pessoa['cpf'];

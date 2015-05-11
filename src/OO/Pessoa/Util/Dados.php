@@ -2,17 +2,30 @@
 
 namespace OO\Pessoa\Util;
 
+use OO\Banco\Fixture;
+use OO\Banco\ConexaoDB;
 use OO\Pessoa\Types\PessoaFisica;
 use OO\Pessoa\Types\PessoaJuridica;
 
 class Dados {
 
+    public function flush(){
+        $bd = new ConexaoDB();
+        $fixture = new Fixture($bd->getPdo());
+        $fixture->dropClientes();
+        $fixture->createClientes();
+        $fixture->populateClientes();
+    }
+
     public function montaArray()
     {
-        $dados = include ROOT."/dados/clientes.php";
+        $bd = new ConexaoDB();
+        $sql = "select * from cliente ";
+        $stmt = $bd->getPdo()->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
         $arrayPessoas = array();
-
-        foreach ($dados as $pessoa) {
+        foreach ($result as $pessoa) {
             if($pessoa['tipo']=="CPF"){
                 $arrayPessoas[] = new PessoaFisica($pessoa);
             }else{
@@ -23,7 +36,8 @@ class Dados {
         return $arrayPessoas;
     }
 
-    public function montaTabela($arrayPessoas,$sort){
+    public function montaTabela($arrayPessoas,$sort)
+    {
         $html = "";
         if($sort == 'true'){
             krsort($arrayPessoas);
@@ -40,7 +54,7 @@ class Dados {
 
                 <tr>
                     <td>{$pessoa->getId()}</td>
-                    <td><a href='/www/view_pessoa.php?id={$pessoa->getId()}' class='fancy' data-fancybox-type='iframe'>{$pessoa->getNome()}</a></td>
+                    <td><a href='view_pessoa.php?id={$pessoa->getId()}' class='fancy' data-fancybox-type='iframe'>{$pessoa->getNome()}</a></td>
                     <td>{$pessoa->getEmail()}</td>
                     <td>{$pessoa->getTelefone()}</td>
                     <td>{$tipo}</td>
@@ -52,7 +66,8 @@ class Dados {
         return $html;
     }
 
-    public function montaTabelaporId($arrayPessoas,$id_pessoa){
+    public function montaTabelaporId($arrayPessoas,$id_pessoa)
+    {
         $html = "";
 
         foreach ($arrayPessoas as $pessoa) {
